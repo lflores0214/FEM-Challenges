@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="container"  data-theme="theme1" id="container">
+      <div
+        class="calculator"
+        data-previousKeyType=""
+        data-num1=""
+        data-operator=""
+      >
+        <div class="heading">
+          <div class="heading-title">calc</div>
+          <span class="theme-selector-title">THEME</span>
+          <div class="toggle-container">
+            <label class="toggle-choices" for="toggle-btn">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </label>
+            <input
+              type="range"
+              min="1"
+              max="3"
+              value="1"
+              id="toggle-btn"
+              class="toggle-btn"
+            />
+          </div>
+        </div>
+        <div class="display" id="display">0</div>
+        <div class="keypad">
+          <div class="row">
+            <div class="btn main">7</div>
+            <div class="btn main">8</div>
+            <div class="btn main">9</div>
+            <div class="btn misc" data-action="delete">DEL</div>
+          </div>
+          <div class="row">
+            <div class="btn main">4</div>
+            <div class="btn main">5</div>
+            <div class="btn main">6</div>
+            <div class="btn main" data-action="add">+</div>
+          </div>
+          <div class="row">
+            <div class="btn main">1</div>
+            <div class="btn main">2</div>
+            <div class="btn main">3</div>
+            <div class="btn main" data-action="subtract">-</div>
+          </div>
+          <div class="row">
+            <div class="btn main" data-action="decimal">.</div>
+            <div class="btn main">0</div>
+            <div class="btn main" data-action="divide">/</div>
+            <div class="btn main" data-action="multiply">&times;</div>
+          </div>
+          <div class="row-btm">
+            <div class="btn misc btn-lg" data-action="reset">RESET</div>
+            <div class="btn equals btn-lg" data-action="calculate">=</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Luis Flores</a>.
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

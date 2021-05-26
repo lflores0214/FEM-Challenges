@@ -1,0 +1,254 @@
+:root {
+    /* Colors */
+    --main-bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: rgb(24, 32, 52);
+    --main-key-bg: hsl(30, 25%, 89%);
+    --main-key-shadow: hsl(28, 16%, 65%);
+    --misc-key-bg: hsl(225, 21%, 49%);
+    --misc-key-shadow: hsl(224, 28%, 35%);
+    --eq-key-bg: hsl(6, 63%, 50%);
+    --eq-key-shadow: hsl(6, 70%, 34%);
+    --text-color-main: hsl(221, 14%, 31%);
+    --text-color-misc: hsl(0, 0%, 100%);
+    --white: hsl(0, 0%, 100%);
+    --heading-color: hsl(0, 0%, 100%);
+}
+
+[data-theme="theme2"] {
+    --main-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+    --main-key-bg: hsl(45, 7%, 89%);
+    --main-key-shadow: hsl(35, 11%, 61%);
+    --misc-key-bg: hsl(225, 21%, 49%);
+    --misc-key-shadow: hsl(224, 28%, 35%);
+    --eq-key-bg: hsl(25, 98%, 40%);
+    --eq-key-shadow: hsl(25, 99%, 27%);
+    --text-color-main: hsl(60, 10%, 19%);
+    --text-color-misc: hsl(0, 0%, 100%);
+    --white: hsl(0, 0%, 100%);
+    --heading-color: hsl(60, 10%, 19%);
+}
+
+[data-theme="theme3"] {
+    --main-bg: hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+    --main-key-bg: hsl(268, 47%, 21%);
+    --main-key-shadow: hsl(290, 70%, 36%);
+    --misc-key-bg: hsl(281, 89%, 26%);
+    --misc-key-shadow: hsl(285, 91%, 52%);
+    --eq-key-bg: hsl(176, 100%, 44%);
+    --eq-key-shadow: hsl(177, 92%, 70%);
+    --text-color-main: hsl(52, 100%, 62%);
+    --text-color-misc: hsl(198, 20%, 13%);
+    --white: hsl(0, 0%, 100%);
+    --heading-color: hsl(52, 100%, 62%);
+}
+
+body {
+    padding: 0;
+    margin: auto;
+    font-family: "Spartan", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.container {
+    background-color: var(--main-bg);
+    margin: auto;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: grid;
+    width: 400px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    color: var(--heading-color);
+}
+
+.heading-title {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.theme-selector-title {
+    font-weight: 400;
+    font-size: 16px;
+    align-self: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    padding-bottom: 3px;
+    margin-left: 170px;
+}
+
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.toggle-choices {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 400;
+    width: 80px;
+    margin-right: 5px;
+
+}
+
+.toggle-btn {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 20px;
+    padding: 2px 5px;
+    background: var(--keypad-bg);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+}
+
+.toggle-btn::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--eq-key-bg);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.toggle-btn::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: var(--eq-key-bg);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+.display {
+    background-color: var(--screen-bg);
+    max-width: 100%;
+    text-align: right;
+    color: var(--heading-color);
+    padding: 20px 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 32px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 15px 0px;
+    background-color: var(--keypad-bg);
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 15px;
+}
+
+.row-btm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    gap: 0px 15px;
+}
+
+.btn {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 5px;
+    color: var(--text-color-main);
+    cursor: pointer;
+}
+
+.main {
+    background-color: var(--main-key-bg);
+    box-shadow: 0px 2px var(--main-key-shadow);
+}
+
+.main:active {
+    box-shadow: inset 0px 0px 5px var(--main-key-shadow)
+}
+
+.misc {
+    background-color: var(--misc-key-bg);
+    color: var(--white);
+    font-size: 20px;
+    box-shadow: 0px 2px var(--misc-key-shadow);
+}
+
+.misc:active {
+    box-shadow: inset 0px 0px 5px var(--misc-key-shadow)
+}
+
+.equals {
+    background-color: var(--eq-key-bg);
+    color: var(--white);
+    box-shadow: 0px 2px var(--eq-key-shadow);
+}
+
+.equals:active {
+    box-shadow: inset 0px 0px 5px var(--eq-key-shadow);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        justify-items: flex-start;
+
+        height: 100vh;
+    }
+
+    .calculator {
+        width: 90vw;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heading {
+        max-width: 100%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .heading-title {}
+}
